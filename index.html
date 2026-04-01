@@ -3,752 +3,560 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ghislain Niyongabo | Portfolio</title>
-  <meta name="description" content="Data analyst portfolio of Ghislain Niyongabo — Data Analyst, Data Science Enthusiast, and Problem Solver specializing in analytics, dashboards, predictive modeling, and business insights." />
+  <title>Ghislain Niyongabo | Data Analyst Portfolio</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #121933;
-      --panel: rgba(255,255,255,0.06);
-      --panel-border: rgba(255,255,255,0.12);
-      --text: #eef2ff;
-      --muted: #b7c0d8;
-      --accent: #7c8cff;
-      --accent-2: #41d1b7;
-      --shadow: 0 20px 50px rgba(0,0,0,0.28);
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-soft: #f1f5f9;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #dbe4ee;
+      --dark: #0f172a;
+      --dark-soft: #1e293b;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       --radius: 22px;
       --max: 1120px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(124,140,255,0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(65,209,183,0.12), transparent 24%),
-        linear-gradient(180deg, #0a0f1f 0%, #0d1428 100%);
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .container {
-      width: min(92%, var(--max));
+      width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
     }
 
+    .section {
+      padding: 72px 0;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 45%, #e2e8f0 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
     .nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(14px);
-      background: rgba(11,16,32,0.68);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .nav-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 1rem 0;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 0 8px;
+      flex-wrap: wrap;
     }
 
-    .brand {
+    .nav-title {
       font-weight: 800;
-      letter-spacing: 0.4px;
-      font-size: 1.05rem;
+      font-size: 24px;
     }
-
-    .brand span { color: var(--accent-2); }
 
     .nav-links {
       display: flex;
-      gap: 1.1rem;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      color: var(--muted);
-      font-size: 0.95rem;
-      transition: 0.25s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-    }
-
-    .hero {
-      padding: 5.5rem 0 3rem;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+      font-size: 14px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
+      grid-template-columns: 1.5fr 0.9fr;
+      gap: 28px;
       align-items: center;
+      padding: 56px 0 80px;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.45rem 0.8rem;
+    .badge {
+      display: inline-block;
+      background: var(--dark);
+      color: var(--white);
+      padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(124,140,255,0.12);
-      color: #d7dcff;
-      border: 1px solid rgba(124,140,255,0.22);
-      font-size: 0.92rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      line-height: 1.02;
-      margin: 0 0 1rem;
-      letter-spacing: -0.04em;
-    }
-
-    .hero h1 .gradient {
-      background: linear-gradient(90deg, #ffffff 0%, #bfc8ff 45%, #7cf0db 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 680px;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.4rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.95rem 1.25rem;
-      border-radius: 14px;
       font-weight: 700;
-      transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
-      border: 1px solid transparent;
+      font-size: 14px;
+      margin-bottom: 18px;
     }
 
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #9f78ff);
-      color: white;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.12);
-      color: var(--text);
-    }
-
-    .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-      border: 1px solid var(--panel-border);
-      border-radius: 28px;
-      padding: 1.25rem;
-      box-shadow: var(--shadow);
-    }
-
-    .portrait {
-      aspect-ratio: 4 / 4.7;
-      border-radius: 22px;
-      background:
-        linear-gradient(180deg, rgba(124,140,255,0.30), rgba(65,209,183,0.14)),
-        linear-gradient(135deg, #1b2448, #10172f);
-      border: 1px solid rgba(255,255,255,0.08);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .portrait::before {
-      content: "YOUR PHOTO";
-      letter-spacing: 0.4em;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.55);
-    }
-
-    .quick-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.8rem;
-      margin-top: 0.9rem;
-    }
-
-    .stat {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 0.9rem;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.2rem;
-      margin-bottom: 0.15rem;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .section {
-      padding: 2rem 0;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .section-head h2 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+    h1 {
+      font-size: 58px;
+      line-height: 1.06;
       margin: 0;
       letter-spacing: -0.03em;
     }
 
-    .section-head p {
+    h2 {
+      font-size: 36px;
+      line-height: 1.15;
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin: 0 0 10px;
+    }
+
+    p.lead {
+      font-size: 19px;
       color: var(--muted);
-      margin: 0;
-      max-width: 700px;
+      max-width: 760px;
+      margin-top: 22px;
     }
 
-    .about-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.2rem;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      box-shadow: var(--shadow);
-    }
-
-    .about-list,
-    .skills-list,
-    .contact-list {
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .about-item,
-    .contact-item {
+    .actions {
       display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
     }
 
-    .icon {
-      flex: 0 0 42px;
-      height: 42px;
-      width: 42px;
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 18px;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease;
+      border: 1px solid var(--line);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: var(--white);
+      border-color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .profile-box {
+      padding: 28px;
+    }
+
+    .profile-box p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .profile-item {
+      margin-bottom: 18px;
+    }
+
+    .two-col {
       display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: rgba(124,140,255,0.14);
-      border: 1px solid rgba(124,140,255,0.22);
-      font-size: 1rem;
+      grid-template-columns: 0.9fr 1.4fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-box,
+    .project-card,
+    .skill-card,
+    .split-card {
+      padding: 30px;
+    }
+
+    .projects-grid,
+    .skills-grid,
+    .split-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid,
+    .split-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .split-grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+
+    ul.clean li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    ul.clean li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--dark);
     }
 
     .tags {
       display: flex;
+      gap: 10px;
       flex-wrap: wrap;
-      gap: 0.7rem;
+      margin-top: 20px;
     }
 
     .tag {
-      padding: 0.65rem 0.85rem;
+      padding: 8px 12px;
+      background: var(--surface-soft);
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--text);
-      font-size: 0.92rem;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .project {
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
-      border: 1px solid var(--panel-border);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-media {
-      height: 190px;
-      background:
-        linear-gradient(135deg, rgba(124,140,255,0.28), rgba(65,209,183,0.18)),
-        linear-gradient(135deg, #1a2347, #0f1730);
-      display: grid;
-      place-items: center;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.16em;
-      font-size: 0.8rem;
-    }
-
-    .project-body {
-      padding: 1.15rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-      flex: 1;
-    }
-
-    .project h3 {
-      margin: 0;
-      font-size: 1.15rem;
-    }
-
-    .project p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 0.7rem;
-      margin-top: auto;
-      flex-wrap: wrap;
-    }
-
-    .project-links a {
+      font-size: 14px;
       font-weight: 700;
-      font-size: 0.94rem;
-      color: #d9deff;
+      color: #334155;
+      border: 1px solid var(--line);
     }
 
-    .timeline {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 1rem;
-      padding: 1.1rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-    }
-
-    .timeline-time {
-      color: #d6ddff;
-      font-weight: 700;
-    }
-
-    .timeline-item h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1.08rem;
-    }
-
-    .timeline-item p {
-      margin: 0;
+    .muted {
       color: var(--muted);
+    }
+
+    .contact {
+      background: var(--dark);
+      color: var(--white);
+      border-top: 1px solid #1e293b;
     }
 
     .contact-card {
-      min-height: 100%;
+      background: var(--dark-soft);
+      border: 1px solid #334155;
+      border-radius: var(--radius);
+      padding: 28px;
     }
 
-    .contact-form {
-      display: grid;
-      gap: 0.9rem;
+    .contact a {
+      text-decoration: underline;
     }
-
-    .field {
-      width: 100%;
-      padding: 0.95rem 1rem;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      outline: none;
-    }
-
-    .field::placeholder { color: #9ca6c4; }
-    textarea.field { min-height: 140px; resize: vertical; }
 
     footer {
-      padding: 2rem 0 3rem;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.95rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+      padding: 20px 0 40px;
+      color: #94a3b8;
+      font-size: 14px;
     }
 
     @media (max-width: 980px) {
       .hero-grid,
-      .about-grid,
-      .contact-grid,
-      .projects-grid {
+      .two-col,
+      .projects-grid,
+      .skills-grid,
+      .split-grid,
+      .split-grid.two {
         grid-template-columns: 1fr;
       }
 
-      .timeline-item {
-        grid-template-columns: 1fr;
+      h1 {
+        font-size: 42px;
       }
 
-      .hero {
-        padding-top: 4rem;
+      h2 {
+        font-size: 30px;
       }
     }
 
-    @media (max-width: 680px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-      }
-
-      .quick-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 2.4rem;
-      }
-
+    @media (max-width: 640px) {
       .section {
-        padding: 1.5rem 0;
+        padding: 56px 0;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .nav {
+        padding-top: 18px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#home" class="brand">Ghislain<span>Analytics</span></a>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+  <header class="hero">
+    <div class="container">
+      <nav class="nav">
+        <div>
+          <div class="eyebrow">Portfolio Website</div>
+          <div class="nav-title">Ghislain Niyongabo</div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
       </nav>
+
+      <div class="hero-grid">
+        <div>
+          <div class="badge">Data Analyst | Data Science | Business Intelligence</div>
+          <h1>Turning data into clear insights and better business decisions.</h1>
+          <p class="lead">
+            I am a data analyst with a multidisciplinary background in mathematics, actuarial science,
+            and IT systems, with experience applying data-driven thinking across business, healthcare,
+            and community programmes.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="https://github.com/Ghislainniyongabo" target="_blank">GitHub</a>
+            <a class="btn btn-secondary" href="https://linkedin.com/in/ghislainniyongabo" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="card profile-box">
+          <h3>Quick Profile</h3>
+          <div class="profile-item">
+            <strong>Target Role</strong>
+            <p>Data Analyst / Junior Data Scientist</p>
+          </div>
+          <div class="profile-item">
+            <strong>Core Strengths</strong>
+            <p>Python, SQL, dashboards, predictive analytics, stakeholder reporting</p>
+          </div>
+          <div class="profile-item">
+            <strong>Industries of Interest</strong>
+            <p>Business intelligence, healthcare, community impact, analytics consulting</p>
+          </div>
+          <div class="profile-item">
+            <strong>Email</strong>
+            <p><a href="mailto:niyongaboghislain@gmail.com">niyongaboghislain@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="reveal visible">
-          <div class="eyebrow">● Available for freelance / full-time work</div>
-          <h1>Hello, I’m <span class="gradient">Ghislain Niyongabo</span>.<br />Data Analyst, Data Science Enthusiast, and Problem Solver.</h1>
-          <p>
-            I am a data analyst with a strong background in Data Science, Mathematics, and IT systems. I specialize in transforming raw data into actionable insights that support business decision-making, with hands-on experience in data analysis, research data collection, and system integration. I am currently seeking opportunities as a Data Analyst or Junior Data Scientist.
-          </p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#projects">View My Work</a>
-            <a class="btn btn-secondary" href="#contact">Contact Me</a>
-          </div>
-          <p>
-            Colchester, UK · Open to Data Analyst and Junior Data Scientist opportunities
-          </p>
-        </div>
-
-        <div class="hero-card reveal visible">
-          <div class="portrait"></div>
-          <div class="quick-stats">
-            <div class="stat">
-              <strong>Data</strong><span>Business Insights</span>
-            </div>
-            <div class="stat">
-              <strong>EDA</strong><span>Analysis & Reporting</span>
-            </div>
-            <div class="stat">
-              <strong>ML</strong><span>Predictive Modeling</span>
-            </div>
-          </div>
-        </div>
+  <section id="about" class="section">
+    <div class="container two-col">
+      <div>
+        <div class="eyebrow">About</div>
+        <h2>A profile built for real-world impact</h2>
       </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h2>About Me</h2>
-            <p>A concise overview of my analytical background, technical strengths, and the value I create through data-driven problem solving.</p>
-          </div>
-        </div>
-
-        <div class="about-grid">
-          <div class="card reveal">
-            <div class="about-list">
-              <div class="about-item">
-                <div class="icon">✦</div>
-                <div>
-                  <strong>Who I Am</strong><div style="color: var(--muted);">I am a data analyst with academic foundations in Data Science and Analytics, Mathematics, and Information Technology. I enjoy turning complex datasets into clear findings that help teams make smarter decisions.</div>
-                </div>
-              </div>
-              <div class="about-item">
-                <div class="icon">⚡</div>
-                <div>
-                  <strong>What I Do</strong><div style="color: var(--muted);">I work across data cleaning, exploratory data analysis, statistical analysis, dashboard reporting, and predictive modeling. I combine technical tools with business thinking to uncover patterns, answer key questions, and support performance improvement.</div>
-                </div>
-              </div>
-              <div class="about-item">
-                <div class="icon">☑</div>
-                <div>
-                  <strong>What I Value</strong><div style="color: var(--muted);">I value clarity, accuracy, stakeholder communication, and measurable impact. I am especially motivated by using data to solve real-world problems in business intelligence, community development, and data-driven innovation.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card reveal">
-            <h3 style="margin-top:0;">Skills & Tools</h3>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Pandas</span>
-              <span class="tag">NumPy</span>
-              <span class="tag">Scikit-learn</span>
-              <span class="tag">R</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Excel (Advanced)</span>
-              <span class="tag">Tableau</span>
-              <span class="tag">EDA</span>
-              <span class="tag">Statistical Analysis</span>
-              <span class="tag">Dashboards</span>
-              <span class="tag">Predictive Modeling</span>
-            </div>
-          </div>
-        </div>
+      <div class="card about-box">
+        <p class="muted">
+          I specialise in turning raw data into actionable insights, practical dashboards, and predictive models
+          that help organisations make smarter decisions. My background combines strong quantitative training
+          with experience in data collection, system workflows, and problem-solving in applied settings.
+        </p>
+        <p class="muted">
+          I am especially motivated by opportunities where data can improve efficiency, support strategy,
+          and create measurable value for both businesses and communities.
+        </p>
       </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h2>Featured Projects</h2>
-            <p>Featured work demonstrating my ability to analyze data, build predictive models, and translate findings into business recommendations.</p>
-          </div>
-        </div>
-
-        <div class="projects-grid">
-          <article class="project reveal">
-            <div class="project-media">PROJECT IMAGE</div>
-            <div class="project-body">
-              <h3>Retail Sales Analysis & Predictive Modeling</h3>
-              <p>End-to-end business case study using retail data. I conducted exploratory data analysis to examine customer behavior, product performance, and sales trends, then built a regression model to predict transaction value with an R² of approximately 0.86.</p>
-              <div class="tags">
-                <span class="tag">Python</span>
-                <span class="tag">EDA</span>
-                <span class="tag">Regression</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Ghislainniyongabo/portfolioprojects/blob/main/retail_sales_project.ipynb" target="_blank" rel="noreferrer">View Project ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project-media">PROJECT IMAGE</div>
-            <div class="project-body">
-              <h3>Business Insights from Retail Data</h3>
-              <p>This project answered key business questions around customer demographics, seasonal sales patterns, and product category performance. The analysis showed that adult customer segments drive the highest revenue, electronics and clothing perform best, and basket size strongly influences total sales.</p>
-              <div class="tags">
-                <span class="tag">Business Intelligence</span>
-                <span class="tag">KPI Analysis</span>
-                <span class="tag">Visualization</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Ghislainniyongabo/portfolioprojects/blob/main/retail_sales_project.ipynb" target="_blank" rel="noreferrer">View Analysis ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project-media">PROJECT IMAGE</div>
-            <div class="project-body">
-              <h3>Data-Driven Recommendations</h3>
-              <p>Based on the findings, I generated practical recommendations for revenue optimization, including focusing on high-value adult customer segments, leveraging top-performing product categories, and accounting for seasonal demand patterns in planning and promotions.</p>
-              <div class="tags">
-                <span class="tag">Recommendations</span>
-                <span class="tag">Revenue Optimization</span>
-                <span class="tag">Decision Support</span>
-              </div>
-              <div class="project-links">
-                <a href="#contact">Let’s Talk Data ↗</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h2>Experience</h2>
-            <p>My experience combines analytics, research support, systems work, and a strong academic foundation in quantitative fields.</p>
-          </div>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-time">Experience Highlights</div>
-            <div>
-              <h3>Data, Research, and Systems Support</h3>
-              <p>Collected and managed real-world data through research interviews, maintained and updated datasets for community programs, improved web interfaces, integrated backend data systems, and supported data-driven activities in administrative and research roles.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-time">Education</div>
-            <div>
-              <h3>MSc Data Science and Analytics · Brunel University</h3>
-              <p>Advanced training in analytics, data science methods, and practical business-focused problem solving.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-time">Academic Foundation</div>
-            <div>
-              <h3>MSc Mathematics · University of Stellenbosch | BSc Information Technology · International University of Equator</h3>
-              <p>Built a strong quantitative and technical base across mathematics, computing, and analytical reasoning that supports my work in data analysis and predictive modeling.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h2>Let’s Work Together</h2>
-            <p>I’m open to Data Analyst, Junior Data Scientist, and analytics-focused opportunities. Let’s connect.</p>
-          </div>
-        </div>
-
-        <div class="contact-grid">
-          <div class="card contact-card reveal">
-            <div class="contact-list">
-              <div class="contact-item">
-                <div class="icon">✉</div>
-                <div>
-                  <strong>Email</strong><br />
-                  <a href="mailto:niyongaboghislain@gmail.com">niyongaboghislain@gmail.com</a>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="icon">⌁</div>
-                <div>
-                  <strong>LinkedIn</strong><br />
-                  <a href="https://linkedin.com/in/ghislainniyongabobo" target="_blank" rel="noreferrer">linkedin.com/in/ghislainniyongabo</a>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="icon">⌘</div>
-                <div>
-                  <strong>GitHub Project</strong><br />
-                  <a href="https://github.com/Ghislainniyongabo/portfolioprojects/blob/main/retail_sales_project.ipynb" target="_blank" rel="noreferrer">Retail Sales Analysis Project</a>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="icon">⌖</div>
-                <div>
-                  <strong>Location</strong><br />
-                  Colchester, UK
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card reveal">
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Replace this form with Formspree, Netlify Forms, or your backend to receive messages.');">
-              <input class="field" type="text" placeholder="Your name" required />
-              <input class="field" type="email" placeholder="Your email" required />
-              <textarea class="field" placeholder="Tell me about your data, business problem, or opportunity" required></textarea>
-              <button class="btn btn-primary" type="submit">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © <span id="year"></span> Ghislain Niyongabo. Data Analyst Portfolio.
     </div>
-  </footer>
+  </section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="eyebrow">Projects</div>
+      <h2>Featured analytics work</h2>
+      <p class="lead" style="max-width: 860px; margin-top: 0;">
+        Business-focused projects that combine data cleaning, analysis, modelling, and clear recommendations.
+      </p>
 
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12 });
+      <div class="projects-grid" style="margin-top: 28px;">
+        <article class="card project-card">
+          <h3>Retail Sales Analysis &amp; Revenue Prediction</h3>
+          <p class="muted">
+            End-to-end retail analytics project focused on customer behaviour, sales trends, and revenue prediction using regression modelling.
+          </p>
+          <ul class="clean">
+            <li>Identified top-performing customer segments and product categories</li>
+            <li>Built a regression model with R² ≈ 0.86 to predict transaction value</li>
+            <li>Generated insights to support revenue optimization and inventory planning</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Matplotlib</span>
+          </div>
+          <div class="actions" style="margin-top: 22px;">
+            <a class="btn btn-secondary" href="https://github.com/Ghislainniyongabo/portfolioprojects/blob/main/retail_sales_project.ipynb" target="_blank">View Project</a>
+          </div>
+        </article>
 
-    reveals.forEach((el) => observer.observe(el));
+        <article class="card project-card">
+          <h3>Bank Marketing Optimization</h3>
+          <p class="muted">
+            Predictive analytics project designed to improve marketing efficiency by identifying customers most likely to subscribe to a term deposit.
+          </p>
+          <ul class="clean">
+            <li>Built a logistic regression model for customer targeting</li>
+            <li>Created a high / medium / low-value customer scoring framework</li>
+            <li>Translated model results into actionable campaign recommendations</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Scikit-learn</span>
+          </div>
+          <div class="actions" style="margin-top: 22px;">
+            <a class="btn btn-secondary" href="https://github.com/Ghislainniyongabo/portfolioprojects/blob/main/bank_marketing_analysis.ipynb" target="_blank">View Project</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    const links = document.querySelectorAll('.nav-links a');
-    const sections = [...links].map(link => document.querySelector(link.getAttribute('href')));
+  <section id="skills" class="section" style="background: #ffffff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <div class="container">
+      <div class="eyebrow">Skills</div>
+      <h2>Tools and strengths recruiters look for</h2>
 
-    const setActiveLink = () => {
-      let current = sections[0];
-      sections.forEach(section => {
-        const top = window.scrollY + 120;
-        if (section.offsetTop <= top) current = section;
-      });
-      links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${current.id}`));
-    };
+      <div class="skills-grid" style="margin-top: 28px;">
+        <div class="card skill-card" style="background: var(--surface-soft);">
+          <h3>Programming &amp; Tools</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">R</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Git &amp; GitHub</span>
+          </div>
+        </div>
 
-    window.addEventListener('scroll', setActiveLink);
-    setActiveLink();
-  </script>
+        <div class="card skill-card" style="background: var(--surface-soft);">
+          <h3>Analytics</h3>
+          <div class="tags">
+            <span class="tag">Data Cleaning</span>
+            <span class="tag">EDA</span>
+            <span class="tag">Statistical Analysis</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Dashboards</span>
+            <span class="tag">Data Storytelling</span>
+          </div>
+        </div>
+
+        <div class="card skill-card" style="background: var(--surface-soft);">
+          <h3>Professional</h3>
+          <div class="tags">
+            <span class="tag">Stakeholder Communication</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Analytical Thinking</span>
+            <span class="tag">Adaptability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid two">
+      <div class="card split-card">
+        <div class="eyebrow">Experience</div>
+        <h2 style="font-size: 30px;">Experience highlights</h2>
+        <ul class="clean">
+          <li>Collected and managed real-world data for research and community-based programmes</li>
+          <li>Maintained structured datasets to improve data quality, usability, and reporting</li>
+          <li>Supported web and backend data workflows through system integration tasks</li>
+          <li>Applied data insights to operational, administrative, and programme decisions</li>
+        </ul>
+      </div>
+
+      <div class="card split-card">
+        <div class="eyebrow">Education</div>
+        <h2 style="font-size: 30px;">Academic background</h2>
+        <ul class="clean">
+          <li>MSc Data Science and Analytics — Brunel University (UK)</li>
+          <li>MSc Mathematical Sciences — Stellenbosch University (South Africa)</li>
+          <li>BSc Information Technology — International University of Equator (Burundi)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <div class="container two-col">
+      <div>
+        <div class="eyebrow" style="color: #94a3b8;">Contact</div>
+        <h2>Let’s build something valuable with data.</h2>
+        <p style="color: #cbd5e1; max-width: 720px; font-size: 18px;">
+          I am open to Data Analyst, Business Intelligence, and Junior Data Science opportunities,
+          especially roles where analytics can support strategy, operations, and measurable impact.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <p><strong>Email:</strong> <a href="mailto:niyongaboghislain@gmail.com">niyongaboghislain@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ghislainniyongabo" target="_blank">linkedin.com/in/ghislainniyongabo</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Ghislainniyongabo" target="_blank">github.com/Ghislainniyongabo</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <footer>
+        © 2026 Ghislain Niyongabo. Built for professional portfolio use.
+      </footer>
+    </div>
+  </section>
 </body>
 </html>
