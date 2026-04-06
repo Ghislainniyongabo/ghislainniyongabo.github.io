@@ -447,145 +447,109 @@
 
       <div class="projects-grid" style="margin-top: 28px;">
         <article class="card project-card">
-          <h3>Advertising Sales Prediction (Linear Regression)</h3>
-          <p class="muted">
-            End-to-end marketing analytics project focused on analysing advertising spend across TV, radio, and newspaper channels to predict sales using linear regression.
-          </p>
-          <ul class="clean">
-            <li>Performed full EDA and correlation analysis to identify the strongest drivers of sales</li>
-            <li>Built a regression model with R² ≈ 0.90 and RMSE ≈ 1.78 to predict product sales</li>
-            <li>Validated model performance using cross-validation with CV R² ≈ 0.89</li>
-            <li>Generated insights to support smarter marketing budget allocation and campaign planning</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Scikit-learn</span>
-            <span class="tag">Matplotlib</span>
-          </div>
-          <div class="actions" style="margin-top: 22px;">
-            <a class="btn btn-secondary" href="https://github.com/Ghislainniyongabo" target="_blank">View Project</a>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <h3>Retail Sales Analysis &amp; Revenue Prediction</h3>
-          <p class="muted">
-            End-to-end retail analytics project focused on customer behaviour, sales trends, and revenue prediction using regression modelling.
-          </p>
-          <ul class="clean">
-            <li>Identified top-performing customer segments and product categories</li>
-            <li>Built a regression model with R² ≈ 0.86 to predict transaction value</li>
-            <li>Generated insights to support revenue optimization and inventory planning</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Scikit-learn</span>
-            <span class="tag">Matplotlib</span>
-          </div>
-          <div class="actions" style="margin-top: 22px;">
-            <a class="btn btn-secondary" href="https://github.com/Ghislainniyongabo/portfolioprojects/blob/main/retail_sales_project.ipynb" target="_blank">View Project</a>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <h3>Bank Marketing Optimization</h3>
+         <h3>Advertising Sales Prediction (Linear Regression)</h3>
 <p class="muted">
-  Predictive analytics project aimed at improving marketing ROI by identifying customers most likely to subscribe to term deposits.
+  In this project, I explored how different advertising channels contribute to product sales. I wanted to understand which channels truly drive revenue and how marketing budgets could be allocated more effectively.
 </p>
 
 <ul class="clean">
-  <li>Built a logistic regression model to predict customer subscription probability</li>
-  <li>Identified key drivers such as previous campaign success and contact patterns</li>
-  <li>Developed a customer scoring system (High / Medium / Low value)</li>
-  <li>Enabled targeted marketing to improve conversion rates and reduce costs</li>
+  <li>Explored relationships between TV, radio, and newspaper advertising using correlation analysis</li>
+  <li>Built a linear regression model to quantify the impact of each channel on sales</li>
+  <li>Evaluated model performance using R² ≈ 0.90 and cross-validation</li>
+  <li>Used the model to simulate how changes in advertising spend affect expected sales</li>
 </ul>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Scikit-learn</span>
-          </div>
-          <div class="actions" style="margin-top: 22px;">
-            <a class="btn btn-secondary" href="https://github.com/Ghislainniyongabo/portfolioprojects/blob/main/bank_marketing_analysis.ipynb" target="_blank">View Project</a>
-          </div>
+
+<p class="muted">
+  A key finding was that TV advertising had the strongest influence on sales, while newspaper had limited impact. This suggests that reallocating budget towards more effective channels could significantly improve marketing ROI.
+</p>
+        </article>
+
+        <article class="card project-card">
+          <h3>Retail Sales Analysis & Revenue Prediction</h3>
+<p class="muted">
+  This project focused on understanding customer purchasing behaviour and identifying what drives transaction value in a retail environment.
+</p>
+
+<ul class="clean">
+  <li>Explored customer and product data to identify high-performing segments and categories</li>
+  <li>Built a regression model to predict transaction value based on customer and purchase features</li>
+  <li>Analysed how different factors contribute to revenue generation</li>
+</ul>
+
+<p class="muted">
+  One important insight was that a relatively small number of customers and products contributed disproportionately to total revenue, highlighting opportunities for targeted marketing and inventory optimisation.
+</p>
+        </article>
+
+        <article class="card project-card">
+         <h3>Bank Marketing Optimization</h3>
+<p class="muted">
+  In this project, I analysed customer data from marketing campaigns to understand what drives subscription to term deposits and how targeting strategies can be improved.
+</p>
+
+<ul class="clean">
+  <li>Built a logistic regression model to estimate the probability of customer subscription</li>
+  <li>Identified key behavioural drivers such as previous campaign success and contact frequency</li>
+  <li>Segmented customers into high, medium, and low conversion likelihood groups</li>
+</ul>
+
+<p class="muted">
+  The analysis showed that customers who had previously responded to campaigns were significantly more likely to convert again, suggesting that focusing on these segments can improve efficiency and reduce marketing costs.
+</p>
         </article>
 
 
         <article class="card project-card">
-          <h3>Customer Churn Prediction (Logistic Regression)</h3>
-          <p class="muted">
-            End-to-end customer analytics project focused on predicting churn using detailed exploratory analysis, feature preparation, and an interpretable logistic regression model.
-          </p>
-          <ul class="clean">
-            <li>Cleaned and prepared customer data for classification modelling</li>
-            <li>Built a simple logistic regression model to identify customers most likely to churn</li>
-            <li>Analysed key churn drivers such as contract type, tenure, monthly charges, and support services</li>
-            <li>Evaluated model performance with classification metrics and ROC-AUC</li>
-            <li>Translated results into retention-focused business recommendations</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Scikit-learn</span>
-            <span class="tag">Logistic Regression</span>
-            <span class="tag">Customer Analytics</span>
-          </div>
-          <div class="actions" style="margin-top: 22px;">
-            <a class="btn btn-secondary" href="customer_churn_detailed_simple_logistic.ipynb" target="_blank">View Project</a>
-          </div>
+         <h3>Customer Churn Prediction (Logistic Regression)</h3>
+<p class="muted">
+  This project aimed to understand why customers leave a service and how businesses can proactively identify and retain at-risk users.
+</p>
+
+<ul class="clean">
+  <li>Prepared and cleaned customer data for classification modelling</li>
+  <li>Built a logistic regression model to estimate churn probability</li>
+  <li>Analysed key factors such as contract type, tenure, and monthly charges</li>
+  <li>Evaluated performance using classification metrics and ROC-AUC</li>
+</ul>
+
+<p class="muted">
+  A key insight was that customers on month-to-month contracts with higher charges were significantly more likely to churn, indicating where retention strategies should be focused.
+</p>
         </article>
 
         <article class="card project-card">
-  <h3>Sales Data Analysis & Dashboard (Python, Pandas, Tableau)</h3>
-  <p class="muted">
-    End-to-end data analytics project analysing retail sales data to uncover trends in revenue, profitability, customer behaviour, and regional performance, with insights presented through visualisations and dashboards.
-  </p>
+ <h3>Sales Data Analysis & Dashboard (Python, Pandas, Tableau)</h3>
+<p class="muted">
+  In this project, I analysed retail sales data to understand how revenue, profit, and customer behaviour interact in a real business setting. I was particularly interested in identifying cases where strong sales performance does not translate into profitability.
+</p>
 
-  <ul class="clean">
-    <li>Performed full data cleaning and exploratory data analysis (EDA) using Python and Pandas</li>
-    <li>Analysed sales, profit, and customer trends across categories and regions</li>
-    <li>Identified key business insights including profit drivers and discount impact</li>
-    <li>Built visualisations and a Tableau dashboard to support data-driven decision-making</li>
-  </ul>
+<ul class="clean">
+  <li>Cleaned and structured raw sales data using Python (Pandas) to ensure accuracy and consistency</li>
+  <li>Explored sales and profit patterns across categories, regions, and time</li>
+  <li>Investigated the impact of discounting on profitability</li>
+  <li>Built visualisations and a Tableau dashboard to communicate findings clearly</li>
+</ul>
 
-  <div class="tags">
-    <span class="tag">Python</span>
-    <span class="tag">Pandas</span>
-    <span class="tag">Matplotlib</span>
-    <span class="tag">Tableau</span>
-    <span class="tag">EDA</span>
-  </div>
-
-  <div class="actions" style="margin-top: 22px;">
-    <a class="btn btn-secondary" href="YOUR_GITHUB_NOTEBOOK_LINK" target="_blank">View Project</a>
-    <a class="btn btn-accent" href="YOUR_TABLEAU_LINK" target="_blank">View Dashboard</a>
-  </div>
+<p class="muted">
+  A key insight from this analysis was that some high-revenue categories were less profitable due to aggressive discounting, highlighting the importance of focusing on profit rather than revenue alone.
+</p>
 </article>
 
         <article class="card project-card">
-          <h3>Malaria Analysis in Africa (Public Health Data Project)</h3>
-          <p class="muted">
-            Data-driven public health analytics project analysing malaria incidence across African countries (2007–2017) and evaluating the impact of prevention measures such as bed nets, IPT, and water access.
-          </p>
-          <ul class="clean">
-            <li>Performed full data cleaning and exploratory analysis on multi-country panel dataset</li>
-            <li>Analysed trends in malaria incidence and prevention coverage across 10+ years</li>
-            <li>Built a fixed-effects regression model to assess impact of interventions</li>
-            <li>Identified bed-net usage as the strongest factor associated with reduced malaria incidence</li>
-            <li>Delivered policy-focused insights for public health strategy and resource allocation</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Statsmodels</span>
-            <span class="tag">Data Visualization</span>
-            <span class="tag">Public Health Analytics</span>
-          </div>
-          <div class="actions" style="margin-top: 22px;">
-            <a class="btn btn-secondary" href="Malaria_Africa_Portfolio_Analysis.html" target="_blank">View Project</a>
-          </div>
+         <h3>Malaria Analysis in Africa (Public Health Data Project)</h3>
+<p class="muted">
+  This project explored malaria trends across African countries over a 10-year period, with the goal of understanding which interventions are most effective in reducing disease incidence.
+</p>
+
+<ul class="clean">
+  <li>Cleaned and analysed multi-country panel data covering malaria incidence and prevention measures</li>
+  <li>Investigated trends in bed-net usage, preventive treatment, and water access</li>
+  <li>Applied a fixed-effects regression model to evaluate intervention impact</li>
+</ul>
+
+<p class="muted">
+  The analysis showed that increased bed-net usage was strongly associated with reduced malaria incidence, providing evidence for prioritising this intervention in public health strategies.
+</p>
         </article>
 
       </div>
